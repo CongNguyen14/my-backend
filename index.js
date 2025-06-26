@@ -1,7 +1,7 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors"); // ✅ chỉ cần khai báo ở đây
-const fetch = require("node-fetch");
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import fetch from "node-fetch";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
