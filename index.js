@@ -17,17 +17,17 @@ app.use(bodyParser.json());
 
 // Route POST - gửi dữ liệu lên Google Sheet
 app.post("/submit", async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, result } = req.body;
   const response = await fetch(`https://v1.nocodeapi.com/quin/google_sheets/${process.env.NOCODE_API_KEY}?tabId=Sheet1`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify([[name, email]])
+    body: JSON.stringify([[name, email, result]])
   });
 
-  const result = await response.json();
-  res.json(result);
+  const data = await response.json();
+  res.json(data);
 });
 
 // Route GET - lấy dữ liệu từ Google Sheet
