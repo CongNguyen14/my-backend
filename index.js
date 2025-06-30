@@ -34,7 +34,7 @@ app.post("/submit", async (req, res) => {
 app.get("/data", async (req, res) => {
   try {
     const apiKey = process.env.NOCODE_API_KEY;
-    const url = `https://v1.nocodeapi.com/quin/google_sheets/${apiKey}?tabId=Sheet1&perPage=100&page=1&fields=Name,Email`;
+    const url = `https://v1.nocodeapi.com/quin/google_sheets/${apiKey}?tabId=Sheet1&perPage=100&page=1&fields=Name,Email,Result`;
 
     const response = await fetch(url);
     const data = await response.json();
